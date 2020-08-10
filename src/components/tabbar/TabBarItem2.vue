@@ -1,10 +1,8 @@
 <template>
   <div class="tab-bar-item" @click="itemClick">
-    <!--<img v-if="isActive" :src="getImgUrl(item.itemIconActive)" alt="">-->
-    <!--<img v-else :src="getImgUrl(item.itemIcon)" alt="">-->
     <img v-if="isActive" :src="getItemIconActive" alt="">
     <img v-else :src="getItemIcon" alt="">
-    <div :style="activeStye">{{item.itemText}}</div>
+    <div :style="activeStyle">{{item.itemText}}</div>
   </div>
 </template>
 
@@ -22,11 +20,10 @@
       trueActiveColor() {
         return this.item.activeColor !== undefined ? this.item.activeColor : 'red'
       },
-      activeStye() {
+      activeStyle() {
         return this.isActive ? {color: this.trueActiveColor} : {}
       },
       getItemIconActive() {
-        // return require(this.item.itemIconActive)
         return require('@/assets/img/tabbar/' + this.item.itemIconActive)
       },
       getItemIcon() {
