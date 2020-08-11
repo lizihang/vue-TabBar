@@ -24,6 +24,10 @@
       </tab-bar-item>
     </tab-bar>-->
     <tab-bar2 :items="items"></tab-bar2>
+    <hello-world></hello-world>
+    <h2>counter = {{$store.state.counter}}</h2>
+    <button @click="add">+</button>
+    <button @click="sub">-</button>
   </div>
 </template>
 
@@ -31,6 +35,7 @@
   import TabBar from "./components/tabbar/TabBar";
   import TabBarItem from "./components/tabbar/TabBarItem";
   import TabBar2 from "./components/tabbar/TabBar2";
+  import HelloWorld from "./views/HelloWorld";
 
   export default {
     name: 'App',
@@ -70,7 +75,16 @@
     components: {
       TabBar,
       TabBarItem,
-      TabBar2
+      TabBar2,
+      HelloWorld
+    },
+    methods: {
+      add() {
+        this.$store.commit('increment')
+      },
+      sub() {
+        this.$store.commit('decrement')
+      }
     }
   }
 </script>
