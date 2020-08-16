@@ -49,6 +49,7 @@
   import TabBar2 from "./components/tabbar/TabBar2";
   import HelloWorld from "./views/HelloWorld";
   import * as types from "./store/mutations-types";
+  import axios from 'axios'
 
   export default {
     name: 'App',
@@ -118,6 +119,12 @@
       }
     }
   }
+
+  axios({
+    url: 'http://123.207.32.32:8000/home/multidata'
+  }).then(res => {
+    console.log(res);
+  })
 </script>
 
 <style>
