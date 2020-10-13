@@ -28,6 +28,18 @@
     <h2>counter = {{$store.state.counter}}</h2>
     <button @click="add">+</button>
     <button @click="sub">-</button>
+    <button @click="addCount(5)">+5</button>
+    <button @click="addCount(10)">+10</button>
+    <button @click="addStudent">addStu</button>
+    <h2>getters:{{$store.getters.powerCounter}}</h2>
+    <h2>students:{{$store.getters.getStudents(20)}}</h2>
+    <h2>----------响应式----------</h2>
+    <h2>info:{{$store.state.info}}</h2>
+    <button @click="changeInfo">修改信息</button>
+    <button @click="updateInfo">更新信息异步</button>
+    <h2>----------modules----------</h2>
+    <h2>{{$store.state.moduleA.name}}</h2>
+    <button @click="updateName">更新名字</button>
   </div>
 </template>
 
@@ -36,6 +48,8 @@
   import TabBarItem from "./components/tabbar/TabBarItem";
   import TabBar2 from "./components/tabbar/TabBar2";
   import HelloWorld from "./views/HelloWorld";
+  import * as types from "./store/mutations-types";
+  import axios from 'axios'
 
   export default {
     name: 'App',
@@ -80,13 +94,37 @@
     },
     methods: {
       add() {
-        this.$store.commit('increment')
+        this.$store.commit(types.INCREMENT)
       },
       sub() {
-        this.$store.commit('decrement')
+        this.$store.commit(types.DECREMENT)
+      },
+      addCount(counte) {
+        this.$store.commit(types.INCREMENTCOUNT, counte)
+      },
+      addStudent() {
+        const stu = {id: 104, name: 'eee', age: 88}
+        this.$store.commit(types.SAVESTUDENT, stu)
+      },
+      changeInfo() {
+        this.$store.commit(types.CHANGEINFO)
+      },
+      updateInfo() {
+        this.$store.dispatch('updateInfo').then(res => {
+          console.log(res);
+        })
+      },
+      updateName() {
+        this.$store.commit(types.UPDATENAME)
       }
     }
   }
+
+  axios({
+    url: 'http://123.207.32.32:8000/home/multidata'
+  }).then(res => {
+    console.log(res);
+  })
 </script>
 
 <style>
