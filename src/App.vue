@@ -3,23 +3,23 @@
     <router-view></router-view>
     <!--<tab-bar>
       <tab-bar-item path="/home" active-color="blue">
-        <img slot="item-icon" src="./assets/img/tabbar/3.1首页.svg" alt="">
-        <img slot="item-icon-active" src="./assets/img/tabbar/3.1首页-选中.svg" alt="">
+        <img slot="item-icon" src="./assets/img/tabbar/shouye.svg" alt="">
+        <img slot="item-icon-active" src="./assets/img/tabbar/shouyexuanzhong.svg" alt="">
         <div slot="item-text">首页</div>
       </tab-bar-item>
       <tab-bar-item path="/category" active-color="red">
-        <img slot="item-icon" src="./assets/img/tabbar/3.1类目.svg" alt="">
+        <img slot="item-icon" src="./assets/img/tabbar/leimu.svg" alt="">
         <img slot="item-icon-active" src="./assets/img/tabbar/电梯类目.svg" alt="">
         <div slot="item-text">分类</div>
       </tab-bar-item>
       <tab-bar-item path="/cart" active-color="green">
-        <img slot="item-icon" src="./assets/img/tabbar/3.1购物车.svg" alt="">
-        <img slot="item-icon-active" src="./assets/img/tabbar/3.1购物车-选中.svg" alt="">
+        <img slot="item-icon" src="./assets/img/tabbar/gouwuche.svg" alt="">
+        <img slot="item-icon-active" src="./assets/img/tabbar/gouwuchexuanzhong.svg" alt="">
         <div slot="item-text">购物车</div>
       </tab-bar-item>
       <tab-bar-item path="/profile">
-        <img slot="item-icon" src="./assets/img/tabbar/3.1我的.svg" alt="">
-        <img slot="item-icon-active" src="./assets/img/tabbar/3.1我的-选中.svg" alt="">
+        <img slot="item-icon" src="./assets/img/tabbar/wode.svg" alt="">
+        <img slot="item-icon-active" src="./assets/img/tabbar/wodexuanzhong.svg" alt="">
         <div slot="item-text">我的</div>
       </tab-bar-item>
     </tab-bar>-->
@@ -43,29 +43,29 @@
       return {
         items: [
           {
-            itemIcon: '3.1首页.svg',
-            itemIconActive: '3.1首页-选中.svg',
+            itemIcon: 'shouye.svg',
+            itemIconActive: 'shouyexuanzhong.svg',
             itemText: '首页',
             path: '/home',
             activeColor: "blue"
           },
           {
-            itemIcon: '3.1类目.svg',
-            itemIconActive: '3.1类目-选中.svg',
+            itemIcon: 'leimu.svg',
+            itemIconActive: 'leimuxuanzhong.svg',
             itemText: '分类',
             path: '/category',
             activeColor: "red"
           },
           {
-            itemIcon: '3.1购物车.svg',
-            itemIconActive: '3.1购物车-选中.svg',
+            itemIcon: 'gouwuche.svg',
+            itemIconActive: 'gouwuchexuanzhong.svg',
             itemText: '购物车',
             path: '/cart',
             activeColor: "green"
           },
           {
-            itemIcon: '3.1我的.svg',
-            itemIconActive: '3.1我的-选中.svg',
+            itemIcon: 'wode.svg',
+            itemIconActive: 'wodexuanzhong.svg',
             itemText: '我的',
             path: '/profile'
           }
